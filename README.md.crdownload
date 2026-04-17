@@ -1,0 +1,53 @@
+# April_Burton_Unit42_Assignment
+Unit 42 code:you Cybersecurity Pathway Top Hat first assignment
+
+
+SOC Incident Report: Case2025
+Priority: High | Status: Investigated | 
+Analyst: April D. Burton
+
+
+  Executed Overview
+   On January 22, 2025 at approximately 18:37 UTC, a workstation on the internal LAN (10.1,17,215) was compromised via a Social Engineering Attack/ A fake software vector.
+   The user attempted to download, what was thought to be, "Google Authenticator", but was redirected to to a "Typos Quaded Domine", and upon execution of the malicious downloaded payload, the hostr was able to establish a persistent communication with a known malicious "Command & Control" (C2) infrastructer.
+   Internal reconnaissance by the malware was noted. Through the primary activity remains focused on data exfilteration & maintaining a backdoor.  Folowing the download the system initiated the C2 traffic to multiple external ip addresses.
+    
+  The infected Host identification:
+(The following internal assets were identified as the primary point of infection)
+      Attribute                 Discovery Data
+    User Account                 shutchenson0
+     Host Name                  DESKTOP-L8C5GSJ
+ Internal IP Address             10.1.17.215
+Physical (MAC) address        00:d0:b7:26:4a:74
+
+  Attack Vector & Threat Indicators
+The infection chain began when the user visited the fraudulent website
+designed to mimic an official software distribution.
+   The access domain:
+  *) authenticator.org
+  *) google-authenticator.burlesson-appliance.net
+   
+  Malicious Activity:
+The site delivereed a payload that desguised itself as a trusted
+ security utility tool.
+    
+  A C2 infrastructure Post-Infection:
+The host initiated "Heartbeat" traffic to these IP addresses:
+      *) 5.252.153.241
+      *) 45.135.66.32
+      *) 45.125.66.252
+
+  Network Environment Context:
+    *) Active Dirictory Name: BLUEMOONTuesday
+    *) Local Domain: BLUEMOONTuesday.com
+    *)Primary Domain Contactor: 10.1.17.215
+       (WIN-GSH54QLW48D)
+   *) Default Gateway: 10.1.17.1
+   *) Port 443
+Remediation Steps:
+      *) Isolate the infected host by removing "DESKTOP-L8C5GSJ"
+  from the Network to prevent Lateral Movement
+     *) Reset Passwords: Force a password reset for the User "shutchenson0"
+     *) Block: Update Firewalls to block/hold traffic to the "authenticatoor.org" & "google.authenticatoor.burlesson-appliance.net" domains.
+     
+
